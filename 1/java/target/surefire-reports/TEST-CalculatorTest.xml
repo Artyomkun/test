@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="CalculatorTest" time="0.151" tests="20" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="D:\test\1\java\target\test-classes;D:\test\1\java\target\classes;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.2\junit-jupiter-5.9.2.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\user\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\user\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\user\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.2\junit-jupiter-params-5.9.2.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\user\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="D:\OpenJDK17\jdk-17.0.16\bin"/>
+    <property name="sun.java.command" value="C:\Windows\Temp\surefire3454195915507921169\surefirebooter-20251123205936063_3.jar C:\Windows\Temp\surefire3454195915507921169 2025-11-23T20-59-35_622-jvmRun1 surefire-20251123205936063_1tmp surefire_0-20251123205936063_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\test\1\java\target\test-classes;D:\test\1\java\target\classes;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.2\junit-jupiter-5.9.2.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\user\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\user\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\user\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.2\junit-jupiter-params-5.9.2.jar;C:\Users\user\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\user\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\user"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="D:\OpenJDK17\jdk-17.0.16"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\test\1\java"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Windows\Temp\surefire3454195915507921169\surefirebooter-20251123205936063_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.16+8"/>
+    <property name="user.name" value="user"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.16+8"/>
+    <property name="localRepository" value="C:\Users\user\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Windows\TEMP\"/>
+    <property name="java.version" value="17.0.16"/>
+    <property name="user.dir" value="D:\test\1\java"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="D:\OpenJDK17\jdk-17.0.16\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\tools\dart-sdk\bin\;C:\Program Files\Go\bin;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\tools\ruby34\bin;D:\Python;D:\Python\Library\mingw-w64\bin;D:\Python\Library\usr\bin;D:\Python\Library\bin;D:\Python\Scripts;D:\Python\bin;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Users\user\miniconda3;C:\Users\user\miniconda3\condabin;C:\Users\user\miniconda3\Scripts;C:\Users\user\miniconda3\Library\bin;D:\Python;D:\Python\Scripts;D:\Python\Library\bin;D:\Python\Scripts\anaconda.exe;C:\Users\user\miniconda3\Scripts\conda.exe;D:\Gow\bin;D:\OpenJDK17\jdk-17.0.16\bin;C:\Program Files\dotnet;C:\Program Files\LLVM\bin;C:\Windows\System32\Wbem;C:\Windows\system32;C:\Windows;D:\IntelliJ IDEA 2025.2.3\bin;C:\Users\user\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Docker\Docker\resources;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;D:\Parsing-main;c:\Users\user\.vscode\extensions\ms-python.debugpy-2025.14.1-win32-x64\bundled\scripts\noConfigScripts;C:\Program Files\dotnet\dotnet.exe;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot;C:\Program Files\Docker\Docker\resources\bin;D:\Python313;D:\Python313\Scripts;D:\Python313\Library\bin;C:\Users\user\AppData\Roaming\npm;C:\Program Files\nodejs;C:\Program Files\nodejs;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\ProgramData\chocolatey\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\CMake\bin;C:\Program Files\dotnet\;D:\maven\bin;;C:\tools\php85;C:\Program Files (x86)\Lua\5.1;C:\Program Files (x86)\Lua\5.1\clibs;C:\Users\user\.cargo\bin;C:\Users\user\AppData\Local\GitHubDesktop\bin;C:\Users\user\.dotnet\tools;C:\tools\dart-sdk\bin;C:\Users\user\AppData\Local\Pub\Cache\bin;c:\Users\user\.vscode\extensions\vscjava.vscode-java-debug-0.58.3\bundled\scripts\noConfigScripts;c:\Users\user\.vscode\extensions\ms-python.debugpy-2025.16.0-win32-x64\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.16+8"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testBoundaryA2" classname="CalculatorTest" time="0.063"/>
+  <testcase name="testBoundaryA3" classname="CalculatorTest" time="0.002"/>
+  <testcase name="testBoundaryA8" classname="CalculatorTest" time="0.002"/>
+  <testcase name="testBoundaryA9" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testBoundaryB4" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testBoundaryB5" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testBoundaryB6" classname="CalculatorTest" time="0.002"/>
+  <testcase name="testCondition1FalseByA" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testCondition1FalseByB" classname="CalculatorTest" time="0.002"/>
+  <testcase name="testCondition1True" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testPath2_C1True_C2False" classname="CalculatorTest" time="0.002"/>
+  <testcase name="testPath1_C1True_C2True" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testCondition2TrueByA" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testCondition2False" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testCondition2TrueByResult" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testPath3_C1False_C2True" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testBoundaryResult6" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testBoundaryResult7" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testPath4_C1False_C2False" classname="CalculatorTest" time="0.001"/>
+  <testcase name="testCondition2BothTrue" classname="CalculatorTest" time="0.001"/>
+</testsuite>

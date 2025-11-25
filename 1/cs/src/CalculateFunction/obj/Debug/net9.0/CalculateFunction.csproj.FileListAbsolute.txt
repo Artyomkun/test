@@ -1,0 +1,14 @@
+D:\test\1\cs\src\CalculateFunction\bin\Debug\net9.0\CalculateFunction.exe
+D:\test\1\cs\src\CalculateFunction\bin\Debug\net9.0\CalculateFunction.deps.json
+D:\test\1\cs\src\CalculateFunction\bin\Debug\net9.0\CalculateFunction.runtimeconfig.json
+D:\test\1\cs\src\CalculateFunction\bin\Debug\net9.0\CalculateFunction.dll
+D:\test\1\cs\src\CalculateFunction\bin\Debug\net9.0\CalculateFunction.pdb
+D:\test\1\cs\src\CalculateFunction\obj\Debug\net9.0\CalculateFunction.GeneratedMSBuildEditorConfig.editorconfig
+D:\test\1\cs\src\CalculateFunction\obj\Debug\net9.0\CalculateFunction.AssemblyInfoInputs.cache
+D:\test\1\cs\src\CalculateFunction\obj\Debug\net9.0\CalculateFunction.AssemblyInfo.cs
+D:\test\1\cs\src\CalculateFunction\obj\Debug\net9.0\CalculateFunction.csproj.CoreCompileInputs.cache
+D:\test\1\cs\src\CalculateFunction\obj\Debug\net9.0\CalculateFunction.dll
+D:\test\1\cs\src\CalculateFunction\obj\Debug\net9.0\refint\CalculateFunction.dll
+D:\test\1\cs\src\CalculateFunction\obj\Debug\net9.0\CalculateFunction.pdb
+D:\test\1\cs\src\CalculateFunction\obj\Debug\net9.0\CalculateFunction.genruntimeconfig.cache
+D:\test\1\cs\src\CalculateFunction\obj\Debug\net9.0\ref\CalculateFunction.dll

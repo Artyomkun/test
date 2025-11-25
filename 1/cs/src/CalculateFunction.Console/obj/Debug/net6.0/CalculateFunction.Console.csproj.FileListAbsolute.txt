@@ -1,0 +1,5 @@
+D:\test\1\cs\src\CalculateFunction.Console\obj\Debug\net6.0\CalculateFunction.Console.csproj.AssemblyReference.cache
+D:\test\1\cs\src\CalculateFunction.Console\obj\Debug\net6.0\CalculateFunction.Console.GeneratedMSBuildEditorConfig.editorconfig
+D:\test\1\cs\src\CalculateFunction.Console\obj\Debug\net6.0\CalculateFunction.Console.AssemblyInfoInputs.cache
+D:\test\1\cs\src\CalculateFunction.Console\obj\Debug\net6.0\CalculateFunction.Console.AssemblyInfo.cs
+D:\test\1\cs\src\CalculateFunction.Console\obj\Debug\net6.0\CalculateFunction.Console.csproj.CoreCompileInputs.cache
