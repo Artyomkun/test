@@ -1,0 +1,174 @@
+name: Tests and Coverage
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.txt'
+      - '.gitignore'
+      - 'LICENSE'
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Tests and Coverage
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: 'package-lock.json'
+    
+    - name: Install dependencies
+      run: npm ci --legacy-peer-deps
+      env:
+        PUPPETEER_SKIP_DOWNLOAD: 'true'
+    
+    - name: Install Chrome for Puppeteer
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget gnupg
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable --no-install-recommends
+        sudo rm -rf /var/lib/apt/lists/*
+    
+    - name: Verify Chrome installation
+      run: |
+        google-chrome --version
+        which google-chrome
+    
+    - name: Run tests with coverage
+      run: |
+        npm run test:ci
+      env:
+        CI: true
+        HEADLESS: true
+        PUPPETEER_EXECUTABLE_PATH: '/usr/bin/google-chrome'
+        NODE_OPTIONS: '--max-old-space-size=4096'
+    
+    - name: Generate HTML report
+      if: always()
+      run: |
+        npm run report:all
+    
+    - name: Upload test artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-${{ matrix.node-version }}
+        path: |
+          reports/
+          screenshots/
+        retention-days: 7
+    
+    - name: Upload coverage to Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ./reports/coverage/lcov.info
+        base-path: ./
+        flag-name: node-${{ matrix.node-version }}
+        parallel: true
+        format: lcov
+      env:
+        COVERALLS_FLAG_NAME: node-${{ matrix.node-version }}
+        COVERALLS_PARALLEL: true
+    
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./reports/coverage/lcov.info
+        flags: node-${{ matrix.node-version }}
+        name: codecov-umbrella
+        fail_ci_if_error: false
+        verbose: true
+        directory: ./reports/coverage/
+    
+    - name: Publish Test Report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: Jest Test Results
+        path: reports/junit/junit.xml
+        reporter: jest-junit
+        fail-on-error: false
+    
+    - name: Check coverage thresholds
+      run: |
+        node scripts/check-coverage.js
+      env:
+        MIN_COVERAGE_LINES: 80
+        MIN_COVERAGE_FUNCTIONS: 75
+        MIN_COVERAGE_BRANCHES: 70
+    
+  coverage-finish:
+    name: Finish Coverage Upload
+    needs: test
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        parallel-finished: true
+    
+    - name: Send Slack notification
+      if: failure()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        channel: '#qa-reports'
+        author_name: GitHub Actions
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    
+  deploy-reports:
+    name: Deploy Reports to GitHub Pages
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: artifacts
+    
+    - name: Combine reports
+      run: |
+        mkdir -p combined-reports
+        find artifacts -name "*.xml" -exec cp {} combined-reports/ \;
+        find artifacts -name "*.json" -exec cp {} combined-reports/ \;
+        find artifacts -name "*.html" -exec cp {} combined-reports/ \;
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./combined-reports
+        destination_dir: ./reports
+        keep_files: false
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'

@@ -1,0 +1,105 @@
+name: Coverage Analysis
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  coverage-analysis:
+    name: Coverage Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Generate coverage report
+      run: npm run coverage
+      env:
+        CI: true
+    
+    - name: Analyze coverage with LCOV
+      run: |
+        npm run lcov:summary
+        npm run lcov:low
+        npm run lcov:uncovered
+    
+    - name: Upload to Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ./reports/coverage/lcov.info
+        base-path: ./
+        format: lcov
+        parallel: false
+    
+    - name: Upload to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./reports/coverage/lcov.info
+        flags: unittests
+        name: Habr E2E Tests
+        fail_ci_if_error: false
+        verbose: true
+        directory: ./reports/coverage/
+        codecov_yml_path: .codecov.yml
+    
+    - name: Generate coverage badge
+      run: |
+        node reports/coverage/analyze-lcov.js badge > coverage-badge.svg
+        echo "## Coverage Badge" >> $GITHUB_STEP_SUMMARY
+        echo "![Coverage](https://img.shields.io/badge/coverage-$(node -p "require('./reports/coverage/coverage-summary.json').total.lines.pct")%25-green)" >> $GITHUB_STEP_SUMMARY
+    
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const coverage = JSON.parse(fs.readFileSync('./reports/coverage/coverage-summary.json', 'utf8'));
+          
+          const comment = `
+          ## 📊 Coverage Report
+          
+          | Metric | Coverage | Status |
+          |--------|----------|--------|
+          | Lines | ${coverage.total.lines.pct}% | ${coverage.total.lines.pct >= 80 ? '✅' : '❌'} |
+          | Functions | ${coverage.total.functions.pct}% | ${coverage.total.functions.pct >= 75 ? '✅' : '❌'} |
+          | Branches | ${coverage.total.branches.pct}% | ${coverage.total.branches.pct >= 70 ? '✅' : '❌'} |
+          
+          **Overall Coverage:** ${((coverage.total.lines.pct + coverage.total.functions.pct + coverage.total.branches.pct) / 3).toFixed(2)}%
+          
+          [View Full Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          `;
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
+    
+    - name: Upload coverage artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-artifacts
+        path: |
+          reports/coverage/
+          coverage-badge.svg
+        retention-days: 30

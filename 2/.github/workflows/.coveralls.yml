@@ -1,0 +1,50 @@
+# Конфигурация Coveralls для Habr E2E Tests
+# Документация: https://docs.coveralls.io/
+
+service_name: github-actions
+repo_token: ${COVERALLS_REPO_TOKEN}
+
+parallel: true
+flag_name: habr-e2e-tests
+
+# Настройки coverage
+coverage_format: lcov
+coveralls_endpoint: https://coveralls.io
+
+# Игнорируемые пути
+exclude_lines:
+  - "pragma"
+  - "/* istanbul"
+  - "/* c8"
+  - "console.log"
+  - "debugger"
+  - "istanbul ignore"
+  - "// NOCOV"
+  - "// LCOV_EXCL"
+  - "/* skip coverage */"
+
+# Обработка pull requests
+git:
+  branch: ${GITHUB_REF_NAME}
+  head:
+    id: ${GITHUB_SHA}
+    author_name: ${GITHUB_ACTOR}
+    author_email: ${GITHUB_ACTOR}@users.noreply.github.com
+    committer_name: ${GITHUB_ACTOR}
+    committer_email: ${GITHUB_ACTOR}@users.noreply.github.com
+    message: ${GITHUB_EVENT_HEAD_COMMIT_MESSAGE}
+
+# Настройки для разных окружений
+env:
+  - NODE_ENV=test
+  - CI=true
+
+# Отправка уведомлений
+notification_settings:
+  slack:
+    channel: "#qa-reports"
+    username: "Coveralls Bot"
+    icon_emoji: ":chart_with_upwards_trend:"
+    on_success: change
+    on_failure: always
+    on_pull_requests: always
