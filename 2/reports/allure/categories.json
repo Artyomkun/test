@@ -1,0 +1,154 @@
+{
+    "categories": [
+        {
+            "name": "Критические дефекты продукта",
+            "description": "Дефекты в основном функционале продукта",
+            "messageRegex": ".*(AssertionError|TypeError|ReferenceError).*",
+            "traceRegex": ".*",
+            "matchedStatuses": ["failed", "broken"],
+            "priority": 1
+        },
+        {
+            "name": "Проблемы с тестовой средой",
+            "description": "Проблемы связанные с окружением тестирования",
+            "messageRegex": ".*(TimeoutError|NetworkError|NavigationError).*",
+            "traceRegex": ".*",
+            "matchedStatuses": ["broken"],
+            "priority": 2
+        },
+        {
+            "name": "Пропущенные тесты",
+            "description": "Тесты, пропущенные по причине отсутствия функционала",
+            "messageRegex": ".*(пропущен|отключен|temporarily).*",
+            "traceRegex": ".*",
+            "matchedStatuses": ["skipped"],
+            "priority": 3
+        },
+        {
+            "name": "Нестабильные тесты",
+            "description": "Flaky тесты, которые иногда падают",
+            "messageRegex": ".*(flaky|нестабильн|иногда).*",
+            "traceRegex": ".*",
+            "matchedStatuses": ["failed", "passed"],
+            "flaky": true,
+            "priority": 4
+        },
+        {
+            "name": "Успешные тесты с предупреждениями",
+            "description": "Тесты, которые прошли, но с предупреждениями",
+            "messageRegex": ".*(warning|предупреждение|deprecated).*",
+            "traceRegex": ".*",
+            "matchedStatuses": ["passed"],
+            "priority": 5
+        }
+    ],
+    
+    "testGroups": [
+        {
+            "name": "smoke",
+            "title": "Smoke Tests",
+            "description": "Критичные smoke-тесты основной функциональности",
+            "patterns": [".*smoke.*", ".*TC-1.*"],
+            "priority": 1
+        },
+        {
+            "name": "regression",
+            "title": "Regression Tests",
+            "description": "Полные регрессионные тесты",
+            "patterns": [".*regression.*", ".*TC-[2-9].*"],
+            "priority": 2
+        },
+        {
+            "name": "authentication",
+            "title": "Authentication Tests",
+            "description": "Тесты авторизации и регистрации",
+            "patterns": [".*auth.*", ".*login.*", ".*register.*"],
+            "priority": 3
+        },
+        {
+            "name": "search",
+            "title": "Search Tests",
+            "description": "Тесты поиска и фильтрации",
+            "patterns": [".*search.*", ".*filter.*", ".*sort.*"],
+            "priority": 4
+        },
+        {
+            "name": "navigation",
+            "title": "Navigation Tests",
+            "description": "Тесты навигации по сайту",
+            "patterns": [".*navigation.*", ".*navigate.*", ".*menu.*"],
+            "priority": 5
+        }
+    ],
+    
+    "severityLevels": [
+        {
+            "name": "blocker",
+            "title": "Blocker",
+            "description": "Критическая ошибка, блокирующая работу",
+            "color": "#ff0000",
+            "priority": 1
+        },
+        {
+            "name": "critical",
+            "title": "Critical",
+            "description": "Критическая ошибка, но работа возможна",
+            "color": "#ff4500",
+            "priority": 2
+        },
+        {
+            "name": "normal",
+            "title": "Normal",
+            "description": "Обычная ошибка",
+            "color": "#ffa500",
+            "priority": 3
+        },
+        {
+            "name": "minor",
+            "title": "Minor",
+            "description": "Незначительная ошибка",
+            "color": "#ffff00",
+            "priority": 4
+        },
+        {
+            "name": "trivial",
+            "title": "Trivial",
+            "description": "Косметическая ошибка",
+            "color": "#90ee90",
+            "priority": 5
+        }
+    ],
+    
+    "tags": [
+        {
+            "name": "habr",
+            "title": "Habr",
+            "description": "Тесты для сайта Habr.com",
+            "color": "#007bff"
+        },
+        {
+            "name": "e2e",
+            "title": "E2E",
+            "description": "End-to-end тесты",
+            "color": "#28a745"
+        },
+        {
+            "name": "puppeteer",
+            "title": "Puppeteer",
+            "description": "Тесты с использованием Puppeteer",
+            "color": "#17a2b8"
+        },
+        {
+            "name": "jest",
+            "title": "Jest",
+            "description": "Тесты на Jest",
+            "color": "#6f42c1"
+        },
+        {
+            "name": "typescript",
+            "title": "TypeScript",
+            "description": "Тесты на TypeScript",
+            "color": "#fd7e14"
+        }
+    ]
+}

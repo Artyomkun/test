@@ -1,0 +1,209 @@
+{
+    "metadata": {
+        "project": "Habr E2E Tests",
+        "version": "1.0.0",
+        "environment": "development",
+        "timestamp": "2024-01-15T10:30:45.123Z",
+        "generator": "jest-json-reporter"
+    },
+    "summary": {
+        "totalSuites": 3,
+        "totalTests": 15,
+        "passedTests": 13,
+        "failedTests": 1,
+        "skippedTests": 1,
+        "pendingTests": 0,
+        "totalDuration": 120.534,
+        "successRate": 86.67,
+        "startTime": "2024-01-15T10:28:45.000Z",
+        "endTime": "2024-01-15T10:30:45.123Z"
+    },
+    "suites": [
+        {
+        "name": "Habr.com - Smoke Tests",
+        "file": "src/tests/habr.smoke.test.ts",
+        "tests": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "duration": 45.234,
+        "status": "passed",
+        "testCases": [
+            {
+                "name": "TC-1: Главная страница загружается корректно",
+                "status": "passed",
+                "duration": 12.345,
+                "startTime": "2024-01-15T10:28:46.000Z",
+                "endTime": "2024-01-15T10:28:58.345Z",
+                "error": null,
+                "screenshots": []
+            },
+            {
+                "name": "TC-2: Логотип Habr отображается",
+                "status": "passed",
+                "duration": 8.123,
+                "error": null,
+                "screenshots": ["logo-visible-2024-01-15T10:30:50.png"]
+            },
+            {
+                "name": "TC-3: Навигационное меню отображается",
+                "status": "passed",
+                "duration": 7.891,
+                "error": null,
+                "screenshots": []
+            },
+            {
+                "name": "TC-4: Кнопка входа отображается",
+                "status": "passed",
+                "duration": 6.543,
+                "error": null,
+                "screenshots": []
+            },
+            {
+                "name": "TC-5: Список статей загружается",
+                "status": "passed",
+                "duration": 10.332,
+                "error": null,
+                "screenshots": []
+            }
+        ]
+        },
+            {
+            "name": "Habr.com - Тестирование функционала статей",
+            "file": "src/tests/habr.articles.test.ts",
+            "tests": 6,
+            "passed": 4,
+            "failed": 1,
+            "skipped": 1,
+            "pending": 0,
+            "duration": 50.123,
+            "status": "failed",
+            "testCases": [
+                {
+                    "name": "TC-1: Поиск по запросу 'TypeScript' возвращает результаты",
+                    "status": "passed",
+                    "duration": 15.678,
+                    "error": null,
+                    "screenshots": ["search-typescript-2024-01-15T10:31:45.png"]
+                },
+                {
+                    "name": "TC-2: Поиск по запросу 'React' возвращает результаты",
+                    "status": "passed",
+                    "duration": 12.345,
+                    "error": null,
+                    "screenshots": []
+                },
+                {
+                    "name": "TC-3: Поиск по запросу 'Docker' возвращает результаты",
+                    "status": "passed",
+                    "duration": 11.234,
+                    "error": null,
+                    "screenshots": []
+                },
+                {
+                    "name": "TC-4: Можно открыть первую статью из списка",
+                    "status": "failed",
+                    "duration": 8.901,
+                    "error": {
+                        "message": "TimeoutError: waiting for selector `.tm-articles-list__item` failed: timeout 10000ms exceeded",
+                        "stack": "TimeoutError: waiting for selector `.tm-articles-list__item` failed: timeout 10000ms exceeded\n  at new WaitTask (node_modules/puppeteer/src/common/WaitTask.ts:155:28)\n  at DOMWorld.waitForSelector (node_modules/puppeteer/src/common/DOMWorld.ts:508:22)",
+                        "type": "TimeoutError"
+                    },
+                    "screenshots": ["article-timeout-2024-01-15T10:32:15.png"]
+                },
+                {
+                    "name": "TC-5: Сортировка статей по рейтингу",
+                    "status": "skipped",
+                    "duration": 0,
+                    "error": null,
+                    "screenshots": [],
+                    "skipReason": "Тест пропущен: функция сортировки временно отключена на сайте"
+                },
+                {
+                    "name": "TC-6: Фильтрация статей по времени",
+                    "status": "passed",
+                    "duration": 7.890,
+                    "error": null,
+                    "screenshots": []
+                }
+            ]
+        },
+        {
+        "name": "Habr.com - Тестирование авторизации",
+        "file": "src/tests/habr.auth.test.ts",
+        "tests": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "duration": 25.177,
+        "status": "passed",
+        "testCases": [
+            {
+                "name": "TC-1: Форма входа содержит все необходимые элементы",
+                "status": "passed",
+                "duration": 8.234,
+                "error": null,
+                "screenshots": ["login-form-elements-2024-01-15T10:32:50.png"]
+            },
+            {
+                "name": "TC-2: Чекбокс 'Запомнить меня' работает корректно",
+                "status": "passed",
+                "duration": 6.789,
+                "error": null,
+                "screenshots": []
+            },
+            {
+                "name": "TC-3: Навигация по ссылкам работает корректно",
+                "status": "passed",
+                "duration": 7.654,
+                "error": null,
+                "screenshots": []
+            },
+            {
+                "name": "TC-4: Вход с неверными данными показывает ошибку",
+                "status": "passed",
+                "duration": 8.500,
+                "error": null,
+                "screenshots": []
+            }
+        ]
+        }
+    ],
+    "environment": {
+        "node": "18.15.0",
+        "npm": "9.5.0",
+        "os": "Windows_NT 10.0.22621",
+        "architecture": "x64",
+        "browser": "Chrome 120.0.0.0",
+        "headless": false,
+        "puppeteer": "21.0.0",
+        "jest": "29.5.0",
+        "typescript": "5.0.0"
+    },
+    "qualityMetrics": {
+        "testStability": 93.33,
+        "flakyTests": 0,
+        "avgTestDuration": 8.035,
+        "slowestTest": {
+            "name": "TC-1: Поиск по запросу 'TypeScript' возвращает результаты",
+            "duration": 15.678
+        },
+        "fastestTest": {
+            "name": "TC-2: Логотип Habr отображается",
+            "duration": 8.123
+        },
+        "screenshotCount": 3
+    },
+    "performance": {
+        "totalDuration": 120.534,
+            "suiteDurations": {
+            "smoke": 45.234,
+            "articles": 50.123,
+            "auth": 25.177
+        },
+        "avgSuiteDuration": 40.178,
+        "executionRate": 0.124
+    }
+}

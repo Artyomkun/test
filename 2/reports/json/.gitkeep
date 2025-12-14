@@ -1,0 +1,89 @@
+
+## 2. **reports/json/config.json**
+
+```json
+{
+    "jsonReports": {
+        "version": "1.0.0",
+        "description": "Конфигурация JSON отчетов для Habr E2E Tests",
+        
+        "formats": {
+        "testResults": {
+            "enabled": true,
+            "filename": "test-results.json",
+            "include": ["summary", "suites", "environment", "metadata"],
+            "prettyPrint": true,
+            "indent": 2
+        },
+        "coverage": {
+            "enabled": true,
+            "filename": "coverage-summary.json",
+            "source": "coverage/coverage-summary.json",
+            "transform": true
+        },
+        "performance": {
+            "enabled": false,
+            "filename": "performance-metrics.json",
+            "metrics": ["duration", "memory", "cpu"]
+        },
+        "trends": {
+            "enabled": true,
+            "filename": "trend-analysis.json",
+            "periods": ["daily", "weekly", "monthly"],
+            "maxEntries": 100
+        },
+        "summary": {
+            "enabled": true,
+            "filename": "summary.json",
+            "combine": ["testResults", "coverage", "performance"]
+        }
+        },
+        
+        "archiving": {
+        "enabled": true,
+        "pattern": "*-{date}.json",
+        "dateFormat": "YYYY-MM-DD",
+        "retentionDays": 30,
+        "compression": false
+        },
+        
+        "validation": {
+        "schemaValidation": true,
+        "requiredFields": ["timestamp", "project", "summary"],
+        "schemaPath": "./schemas/"
+        },
+        
+        "output": {
+        "directory": "./reports/json",
+        "createSubdirectories": false,
+        "backupExisting": true
+        },
+        
+        "integration": {
+        "webhook": {
+            "enabled": false,
+            "url": "",
+            "events": ["testComplete", "coverageComplete", "error"]
+        },
+        "database": {
+            "enabled": false,
+            "type": "mongodb",
+            "collection": "test_reports"
+        },
+        "storage": {
+            "enabled": false,
+            "type": "s3",
+            "bucket": "test-reports"
+        }
+        },
+        
+        "metadata": {
+        "project": "Habr E2E Tests",
+        "version": "${npm_package_version}",
+        "repository": "https://github.com/your-username/habr-e2e-tests",
+        "environment": "${NODE_ENV}",
+        "ci": "${CI}",
+        "branch": "${GIT_BRANCH}"
+        }
+    }
+}

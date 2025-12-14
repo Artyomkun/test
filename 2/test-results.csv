@@ -1,0 +1,3 @@
+Test Suite,Test Name,Status,Time (s),Message
+"Test Suite",Total Tests,SUITE,45.2,"Tests: 10, Failures: 1"
+"Test Suite","TC-2: Failed Test",FAILED,2.1,"Assertion Error"

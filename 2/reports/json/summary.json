@@ -1,0 +1,153 @@
+{
+    "metadata": {
+        "project": "Habr E2E Tests",
+        "reportType": "comprehensive-summary",
+        "timestamp": "2024-01-15T10:30:45.123Z",
+        "generationTime": "2024-01-15T10:31:00.000Z",
+        "reportVersion": "1.0.0"
+    },
+    "testResults": {
+        "status": "partial-success",
+        "totalSuites": 3,
+        "totalTests": 15,
+        "passed": 13,
+        "failed": 1,
+        "skipped": 1,
+        "successRate": 86.67,
+        "totalDuration": 120.534,
+        "avgDurationPerTest": 8.035,
+        "failedTests": [
+            {
+                "suite": "Habr.com - Тестирование функционала статей",
+                "test": "TC-4: Можно открыть первую статью из списка",
+                "error": "TimeoutError: waiting for selector `.tm-articles-list__item` failed: timeout 10000ms exceeded",
+                "duration": 8.901
+            }
+        ],
+        "skippedTests": [
+            {
+                "suite": "Habr.com - Тестирование функционала статей",
+                "test": "TC-5: Сортировка статей по рейтингу",
+                "reason": "Тест пропущен: функция сортировки временно отключена на сайте"
+            }
+        ]
+    },
+    "coverage": {
+        "status": "good",
+        "lines": { "percentage": 89.2, "status": "good", "threshold": 80 },
+        "functions": { "percentage": 89.8, "status": "good", "threshold": 75 },
+        "branches": { 
+            "percentage": 79.8, 
+            "status": "acceptable", 
+            "threshold": 70 
+        },
+        "overall": 87.05,
+        "filesAnalyzed": 5,
+        "lowCoverageFiles": [
+            {
+                "file": "src/pages/HabrAuthPage.ts",
+                "lines": 54.7,
+                "category": "poor",
+                "recommendation": "Требуется написание дополнительных тестов"
+            }
+        ]
+    },
+    "performance": {
+        "status": "good",
+        "totalDuration": 120.534,
+        "avgSuiteDuration": 40.178,
+        "slowestSuite": {
+            "name": "Habr.com - Тестирование функционала статей",
+            "duration": 50.123
+        },
+        "fastestSuite": {
+            "name": "Habr.com - Тестирование авторизации",
+            "duration": 25.177
+        },
+        "slowestTest": {
+            "name": "TC-1: Поиск по запросу 'TypeScript' возвращает результаты",
+            "duration": 15.678,
+            "suite": "Habr.com - Тестирование функционала статей"
+        }
+    },
+    "screenshots": {
+        "total": 3,
+        "onFailure": 1,
+        "onSuccess": 2,
+        "list": [
+            "logo-visible-2024-01-15T10:30:50.png",
+            "search-typescript-2024-01-15T10:31:45.png",
+            "article-timeout-2024-01-15T10:32:15.png"
+        ]
+    },
+    "qualityGates": {
+        "testSuccess": { 
+            "threshold": 80, 
+            "actual": 86.67, 
+            "passed": true 
+        },
+        "coverage": { 
+            "threshold": 80, 
+            "actual": 87.05, 
+            "passed": true 
+        },
+        "performance": { 
+            "threshold": 180, 
+            "actual": 120.534, 
+            "passed": true 
+        },
+        "overall": "passed"
+    },
+    "recommendations": [
+        {
+            "priority": "high",
+            "type": "test",
+            "description": "Устранить падение теста TC-4 в сьюте 'Тестирование функционала статей'",
+            "action": "Проверить селектор .tm-articles-list__item, увеличить timeout или добавить retry логику"
+        },
+        {
+            "priority": "medium",
+            "type": "coverage",
+            "description": "Улучшить покрытие кода для файла src/pages/HabrAuthPage.ts",
+            "action": "Написать тесты для методов testInvalidLoginScenarios и testInvalidRegisterScenarios"
+        },
+        {
+            "priority": "low",
+            "type": "test",
+            "description": "Включить пропущенный тест TC-5 после восстановления функционала сортировки",
+            "action": "Следить за восстановлением функционала на сайте Habr и активировать тест"
+        }
+    ],
+    "trends": {
+        "testSuccess": { 
+            "current": 86.67, 
+            "previous": 85.0, 
+            "change": "+1.67", 
+            "direction": "improving" 
+        },
+        "coverage": { 
+            "current": 87.05, 
+            "previous": 85.5, 
+            "change": "+1.55", 
+            "direction": "improving" 
+        },
+        "performance": { 
+            "current": 120.534, 
+            "previous": 125.2, 
+            "change": "-4.666", 
+            "direction": "improving" 
+        }
+    },
+    "environment": {
+        "node": "18.15.0",
+        "os": "Windows_NT 10.0.22621",
+        "browser": "Chrome 120.0.0.0",
+        "headless": false,
+        "timestamp": "2024-01-15T10:30:45.123Z"
+    },
+    "nextSteps": [
+        "Исправить упавший тест TC-4",
+        "Улучшить покрытие HabrAuthPage.ts",
+        "Запустить тесты в CI окружении для проверки стабильности"
+    ]
+}

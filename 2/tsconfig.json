@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    // Основные настройки
+    "target": "ESNEXT",
+    "module": "ESNEXT",
+    "moduleResolution": "bundler",
+    "lib": ["ESNEXT", "DOM"],
+    "types": ["node"],
+
+    // Директории
+    "outDir": "./dist",
+    "rootDir": ".",
+
+    // Строгие проверки TypeScript
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": false,
+
+    // Декларации типов
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true,
+
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  
+  // Включаемые файлы
+  "include": [
+    "habr-tests/src/**/*",
+    "jest.config.ts",
+    "jest-puppeteer.config.ts"
+  ],
+  
+  // Исключаемые файлы
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "screenshots",
+    "reports"
+  ]
+}

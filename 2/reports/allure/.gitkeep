@@ -1,0 +1,214 @@
+## 2. **reports/allure/.gitkeep**
+
+## 3. **reports/allure/allure-config.yml**
+
+```yaml
+# Конфигурация Allure отчетов
+# Документация: https://docs.qameta.io/allure/#_configuration
+
+# Версия конфигурации
+version: 2.0
+
+# Основные настройки
+report:
+  # Язык отчетов
+  language: en
+  # Название отчета
+  title: "Habr.com E2E Tests Report"
+  # Логотип (опционально)
+  # logo: /path/to/logo.png
+  
+# Экспорт отчетов
+export:
+  # Формат экспорта
+  - "junit"
+  - "json"
+  # Директория для экспорта
+  directory: "./reports/allure/export"
+
+# Плагины
+plugins:
+  - "behaviors-plugin"
+  - "junit-plugin"
+  - "packages-plugin"
+  - "screen-diff-plugin"
+  - "xctest-plugin"
+  - "xray-plugin"
+  - "custom-logo-plugin"
+
+# Категории тестов
+categories:
+  - name: "Product defects"
+    messageRegex: ".*AssertionError.*"
+    traceRegex: ".*"
+    matchedStatuses:
+      - failed
+  - name: "Test defects"
+    messageRegex: ".*RuntimeException.*"
+    traceRegex: ".*"
+    matchedStatuses:
+      - broken
+  - name: "Skipped tests"
+    messageRegex: ".*"
+    traceRegex: ".*"
+    matchedStatuses:
+      - skipped
+
+# Группировка
+groups:
+  - name: "Smoke Tests"
+    title: "Smoke Tests"
+    patterns:
+      - ".*smoke.*"
+  - name: "Regression Tests"
+    title: "Regression Tests"
+    patterns:
+      - ".*regression.*"
+  - name: "Authentication"
+    title: "Authentication Tests"
+    patterns:
+      - ".*auth.*"
+      - ".*login.*"
+      - ".*register.*"
+
+# Настройки для разных типов вложений
+attachments:
+  # Максимальный размер вложения (в байтах)
+  maxSize: 10485760  # 10 MB
+  # Директория для временных файлов
+  directory: "./reports/allure/attachments"
+  
+# Настройки для скриншотов
+screenshots:
+  # Автоматически делать скриншоты при падении тестов
+  onFail: true
+  # Делать скриншоты для каждого шага
+  onStep: false
+  # Директория для скриншотов
+  directory: "./reports/allure/screenshots"
+
+# Настройки для видео
+video:
+  # Записывать видео тестов
+  enabled: false
+  # Директория для видео
+  directory: "./reports/allure/videos"
+  # Максимальная длина видео (секунды)
+  maxLength: 300
+
+# Настройки для логов
+logs:
+  # Сохранять логи тестов
+  enabled: true
+  # Директория для логов
+  directory: "./reports/allure/logs"
+  # Уровень логирования
+  level: "INFO"
+
+# Настройки для таймлайна
+timeline:
+  # Показывать таймлайн
+  enabled: true
+  # Группировать тесты по параллельности
+  parallel: false
+
+# Настройки для графиков
+graphs:
+  # Показывать графики
+  enabled: true
+  # Типы графиков
+  types:
+    - "duration"
+    - "status"
+    - "severity"
+    - "categories"
+
+# Настройки для поведения (behaviors)
+behaviors:
+  # Группировать по эпикам
+  epics: true
+  # Группировать по историям
+  stories: true
+  # Группировать по фичам
+  features: true
+
+# Настройки для пакетов
+packages:
+  # Группировать по пакетам
+  enabled: true
+  # Уровень вложенности
+  depth: 3
+
+# Настройки для кастомного CSS
+styles:
+  # Кастомный CSS файл
+  customCss: false
+  # Кастомный JavaScript
+  customJs: false
+
+# Настройки для локализации
+i18n:
+  # Локализация
+  locale: "en"
+  # Поддерживаемые языки
+  supportedLocales:
+    - "en"
+    - "ru"
+
+# Настройки для фильтрации
+filters:
+  # Фильтровать по статусу
+  status: true
+  # Фильтровать по времени
+  time: true
+  # Фильтровать по тегам
+  tags: true
+
+# Настройки для сортировки
+sorting:
+  # Сортировать по имени
+  name: true
+  # Сортировать по времени
+  time: true
+  # Сортировать по статусу
+  status: true
+
+# Настройки для поиска
+search:
+  # Включить поиск
+  enabled: true
+  # Минимальная длина запроса
+  minLength: 3
+
+# Настройки для экспорта
+export:
+  # Форматы экспорта
+  formats:
+    - "json"
+    - "xml"
+    - "csv"
+  # Директория для экспорта
+  directory: "./reports/allure/export"
+  # Автоматический экспорт
+  auto: false
+
+# Настройки для уведомлений
+notifications:
+  # Уведомления об ошибках
+  errors: true
+  # Уведомления о предупреждениях
+  warnings: true
+
+# Настройки для кэширования
+cache:
+  # Включить кэширование
+  enabled: true
+  # Время жизни кэша (секунды)
+  ttl: 3600
+
+# Настройки для безопасности
+security:
+  # Защита отчетов
+  enabled: false
+  # Токен для доступа
+  token: ""

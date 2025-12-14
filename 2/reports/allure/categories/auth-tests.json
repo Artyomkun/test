@@ -1,0 +1,110 @@
+{
+    "name": "Habr E2E Tests Executor",
+    "type": "jest",
+    "url": "https://github.com/your-username/habr-e2e-tests",
+    "buildName": "habr-e2e-tests-#${BUILD_NUMBER}",
+    "buildUrl": "${BUILD_URL}",
+    "reportName": "Habr.com E2E Test Report",
+    "reportUrl": "${REPORT_URL}",
+    
+    "configuration": {
+        "framework": "Jest",
+        "language": "TypeScript",
+        "browser": "Chrome",
+        "headless": false,
+        "parallel": false,
+        "timeout": 30000,
+        "retries": 0
+    },
+    
+    "environment": {
+        "node": "18.15.0",
+        "npm": "9.5.0",
+        "os": "Windows 10",
+        "puppeteer": "21.0.0",
+        "jest": "29.5.0",
+        "allure": "2.21.0"
+    },
+    
+    "execution": {
+        "start": "2024-01-15T10:28:45.000Z",
+        "stop": "2024-01-15T10:30:45.123Z",
+        "duration": 120534,
+        "status": "finished",
+        "stage": "test",
+        "tests": {
+        "total": 15,
+        "passed": 13,
+        "failed": 1,
+        "broken": 0,
+        "skipped": 1,
+        "unknown": 0
+        }
+    },
+    
+    "statistics": {
+        "successRate": 86.67,
+        "averageDuration": 8035,
+        "minDuration": 6543,
+        "maxDuration": 15678,
+        "totalDuration": 120534
+    },
+    
+    "attachments": {
+        "screenshots": 3,
+        "logs": 1,
+        "videos": 0,
+        "other": 0,
+        "totalSize": "2.5 MB"
+    },
+    
+    "qualityGates": {
+        "testSuccess": {
+            "threshold": 80,
+            "actual": 86.67,
+            "passed": true
+        },
+        "coverage": {
+            "threshold": 80,
+            "actual": 87.05,
+            "passed": true
+        },
+        "performance": {
+            "threshold": 180,
+            "actual": 120.534,
+            "passed": true
+        },
+        "overall": "passed"
+    },
+    
+    "trigger": {
+        "type": "manual",
+        "user": "automation-user",
+        "branch": "main",
+        "commit": "${GIT_COMMIT_HASH}",
+        "message": "Run E2E tests for Habr.com"
+    },
+    
+    "links": [
+        {
+            "name": "GitHub Repository",
+            "url": "https://github.com/your-username/habr-e2e-tests",
+            "type": "repository"
+        },
+        {
+            "name": "Habr.com",
+            "url": "https://habr.com",
+            "type": "website"
+        },
+        {
+            "name": "Jest Documentation",
+            "url": "https://jestjs.io",
+            "type": "documentation"
+        },
+        {
+            "name": "Allure Documentation",
+            "url": "https://docs.qameta.io/allure/",
+            "type": "documentation"
+        }
+    ]
+}

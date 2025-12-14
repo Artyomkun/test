@@ -1,0 +1,110 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "generator": "trend-analyzer",
+        "timestamp": "2024-01-15T10:30:45.123Z",
+        "period": "30 days",
+        "dataPoints": 30
+    },
+    "summary": {
+        "testSuccessRate": {
+        "current": 86.67,
+        "average": 85.42,
+        "min": 80.0,
+        "max": 92.5,
+        "trend": "improving",
+        "change": "+1.25%"
+        },
+        "testCount": {
+        "current": 15,
+        "average": 14.3,
+        "min": 10,
+        "max": 18,
+        "trend": "increasing",
+        "change": "+2 tests"
+        },
+        "coverage": {
+        "lines": { "current": 89.5, "average": 87.8, "trend": "improving", "change": "+1.7%" },
+        "functions": { "current": 90.0, "average": 88.5, "trend": "improving", "change": "+1.5%" },
+        "branches": { "current": 80.0, "average": 78.2, "trend": "improving", "change": "+1.8%" }
+        },
+        "performance": {
+        "duration": { "current": 120.5, "average": 125.3, "trend": "improving", "change": "-4.8s" },
+        "stability": { "current": 93.5, "average": 92.0, "trend": "improving", "change": "+1.5%" }
+        }
+    },
+    "dailyTrends": [
+        {
+        "date": "2024-01-15",
+        "tests": { "total": 15, "passed": 13, "failed": 1, "skipped": 1, "successRate": 86.67 },
+        "coverage": { "lines": 89.5, "functions": 90.0, "branches": 80.0 },
+        "performance": { "duration": 120.5, "flakyTests": 0 },
+        "issues": [
+            {
+            "type": "test_failure",
+            "test": "Habr.com - Тестирование функционала статей.TC-4",
+            "message": "TimeoutError при открытии статьи"
+            }
+        ]
+        },
+        {
+        "date": "2024-01-14",
+        "tests": { "total": 14, "passed": 12, "failed": 1, "skipped": 1, "successRate": 85.71 },
+        "coverage": { "lines": 89.0, "functions": 89.5, "branches": 79.5 },
+        "performance": { "duration": 118.2, "flakyTests": 0 }
+        }
+    ],
+    "weeklyAggregates": [
+        {
+        "week": "2024-01-08",
+        "tests": { "total": 70, "passed": 60, "failed": 8, "skipped": 2, "successRate": 85.71 },
+        "coverage": { "lines": 88.2, "functions": 88.8, "branches": 78.5 },
+        "performance": { "avgDuration": 122.3, "flakyTests": 1 }
+        },
+        {
+        "week": "2024-01-01",
+        "tests": { "total": 65, "passed": 55, "failed": 8, "skipped": 2, "successRate": 84.62 },
+        "coverage": { "lines": 87.5, "functions": 88.0, "branches": 77.8 },
+        "performance": { "avgDuration": 128.5, "flakyTests": 2 }
+        }
+    ],
+    "analysis": {
+        "testStability": {
+        "flakyTests": [
+            { "test": "TC-3: Навигация по ссылкам работает корректно", "failures": 3, "successes": 27 }
+        ],
+        "mostFailingTests": [
+            { "test": "TC-4: Можно открыть первую статью из списка", "failures": 5, "rate": 33.3 },
+            { "test": "TC-2: Вход с неверными данными показывает ошибку", "failures": 2, "rate": 13.3 }
+        ]
+        },
+        "coverageTrend": {
+        "improvingFiles": [
+            { "file": "src/pages/HabrMainPage.ts", "from": 85.0, "to": 100.0, "change": "+15.0%" },
+            { "file": "src/pages/BasePage.ts", "from": 92.5, "to": 97.5, "change": "+5.0%" }
+        ],
+        "regressingFiles": [
+            { "file": "src/pages/HabrArticlePage.ts", "from": 95.0, "to": 90.0, "change": "-5.0%" }
+        ]
+        },
+        "performanceAnalysis": {
+        "slowestSuites": [
+            { "suite": "Habr.com - Тестирование функционала статей", "avgDuration": 50.1 },
+            { "suite": "Habr.com - Smoke Tests", "avgDuration": 45.2 }
+        ],
+        "improvementAreas": [
+            { "area": "Поиск статей", "current": 15.7, "target": 10.0, "potential": "-36.3%" },
+            { "area": "Открытие статей", "current": 8.9, "target": 5.0, "potential": "-43.8%" }
+        ]
+        },
+        "predictions": {
+        "nextWeek": {
+            "testSuccessRate": { "predicted": 87.5, "confidence": 85 },
+            "coverage": { "lines": 90.0, "functions": 90.5, "branches": 81.0 },
+            "performance": { "duration": 118.0 }
+        },
+        "trend": "positive",
+        "confidence": "high"
+        }
+    },
+}    

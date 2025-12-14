@@ -1,0 +1,50 @@
+{
+  "testsuites": {
+    "testsuite": [
+      {
+        "$": {
+          "name": "Test Suite",
+          "tests": "10",
+          "failures": "1",
+          "errors": "0",
+          "skipped": "2",
+          "time": "45.2"
+        },
+        "testcase": [
+          {
+            "$": {
+              "name": "TC-1: Test Name",
+              "classname": "TestSuite.TestClass",
+              "time": "4.5"
+            }
+          },
+          {
+            "$": {
+              "name": "TC-2: Failed Test",
+              "classname": "TestSuite.TestClass",
+              "time": "2.1"
+            },
+            "failure": [
+              {
+                "_": "\r\n        Подробная информация об ошибке...\r\n      ",
+                "$": {
+                  "message": "Assertion Error"
+                }
+              }
+            ]
+          },
+          {
+            "$": {
+              "name": "TC-3: Skipped Test",
+              "classname": "TestSuite.TestClass",
+              "time": "0.1"
+            },
+            "skipped": [
+              "Причина пропуска теста"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

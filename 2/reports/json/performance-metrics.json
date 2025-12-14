@@ -1,0 +1,192 @@
+{
+    "metadata": {
+        "project": "Habr E2E Tests",
+        "checkTimestamp": "2024-01-15T10:30:45.123Z",
+        "checkType": "comprehensive",
+        "checkInterval": "daily"
+    },
+    "systemHealth": {
+        "status": "healthy",
+        "score": 88,
+        "lastUpdated": "2024-01-15T10:30:45.123Z"
+    },
+    "components": [
+        {
+            "name": "Test Infrastructure",
+            "status": "healthy",
+            "checks": [
+                {
+                    "name": "Puppeteer Connection",
+                    "status": "passed",
+                    "details": "Browser launched successfully",
+                    "duration": 2.5
+                },
+                {
+                    "name": "Test Environment",
+                    "status": "passed",
+                    "details": "All dependencies available",
+                    "duration": 0.8
+                },
+                {
+                    "name": "Network Connectivity",
+                    "status": "passed",
+                    "details": "Habr.com accessible, latency: 120ms",
+                    "duration": 1.2
+                }
+            ]
+            {
+                "name": "Test Execution",
+                "status": "degraded",
+                "checks": [
+                    {
+                        "name": "Test Success Rate",
+                        "status": "passed",
+                        "details": "86.67% (above threshold 80%)",
+                        "duration": 120.534
+                    },
+                    {
+                        "name": "Test Stability",
+                        "status": "warning",
+                        "details": "1 flaky test detected",
+                        "duration": 8.901
+                    },
+                    {
+                        "name": "Execution Time",
+                        "status": "passed",
+                        "details": "120.5s (within limit 180s)",
+                        "duration": 120.534
+                    }
+                ]
+            },
+            {
+                "name": "Code Quality",
+                "status": "healthy",
+                "checks": [
+                    {
+                        "name": "Code Coverage",
+                        "status": "passed",
+                        "details": "87.05% (above threshold 80%)",
+                        "duration": 45.2
+                    },
+                    {
+                        "name": "Linting",
+                        "status": "passed",
+                        "details": "No linting errors",
+                        "duration": 3.5
+                    },
+                    {
+                        "name": "Type Checking",
+                        "status": "passed",
+                        "details": "No TypeScript errors",
+                        "duration": 5.2
+                    }
+                ]
+            },
+            {
+                "name": "Reporting",
+                "status": "healthy",
+                "checks": [
+                    {
+                        "name": "Report Generation",
+                        "status": "passed",
+                        "details": "All reports generated successfully",
+                        "duration": 12.8
+                    },
+                    {
+                        "name": "Data Consistency",
+                        "status": "passed",
+                        "details": "All data sources synchronized",
+                        "duration": 2.1
+                    },
+                    {
+                        "name": "Storage Health",
+                        "status": "passed",
+                        "details": "12.5 MB used, 95% free",
+                        "duration": 0.5
+                    }
+                ]    
+            }
+        },    
+    ],
+    "issues": [
+        {
+            "id": "ISSUE-001",
+            "component": "Test Execution",
+            "severity": "medium",
+            "description": "Flaky test: TC-4: Можно открыть первую статью из списка",
+            "status": "open",
+            "created": "2024-01-15T10:30:45.123Z",
+            "lastOccurred": "2024-01-15T10:30:45.123Z",
+            "occurrences": 3
+        },
+        {
+            "id": "ISSUE-002",
+            "component": "Code Quality",
+            "severity": "low",
+            "description": "Low coverage in src/pages/HabrAuthPage.ts (54.7%)",
+            "status": "open",
+            "created": "2024-01-14T09:15:30.000Z",
+            "lastOccurred": "2024-01-15T10:30:45.123Z",
+            "occurrences": 2
+        }
+    ],
+    "metrics": {
+        "testSuccessRate": 86.67,
+        "coverageRate": 87.05,
+        "executionTime": 120.534,
+        "flakyTestRate": 6.67,
+        "issueResolutionTime": 48,
+        "systemUptime": 99.8
+    },
+    "trends": {
+        "testSuccessRate": { 
+            "current": 86.67, 
+            "trend": "up", 
+            "change": "+1.67" 
+        },
+        "coverageRate": { 
+            "current": 87.05, 
+            "trend": "up", 
+            "change": "+1.55" 
+        },
+        "executionTime": { 
+            "current": 120.534, 
+            "trend": "down", 
+            "change": "-4.666" 
+        },
+        "issueCount": { 
+            "current": 2, 
+            "trend": "stable", 
+            "change": "0" 
+        }
+    },
+    "recommendations": [
+        {
+            "priority": "high",
+            "action": "Fix flaky test TC-4",
+            "impact": "Will improve test stability by ~5%",
+            "estimatedEffort": "2 hours"
+        },
+        {
+            "priority": "medium",
+            "action": "Improve coverage for HabrAuthPage.ts",
+            "impact": "Will increase overall coverage by ~3%",
+            "estimatedEffort": "4 hours"
+        },
+        {
+            "priority": "low",
+            "action": "Optimize test execution time",
+            "impact": "Could reduce execution time by ~20%",
+            "estimatedEffort": "8 hours"
+        }
+    ],
+    "alerts": [
+        {
+            "level": "warning",
+            "message": "Test stability below target (93.33% < 95%)",
+            "component": "Test Execution",
+            "timestamp": "2024-01-15T10:30:45.123Z"
+        }
+    ],
+    "nextScheduledCheck": "2024-01-16T10:30:00.000Z"
+}

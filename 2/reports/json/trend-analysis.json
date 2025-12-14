@@ -1,0 +1,395 @@
+{
+    "metadata": {
+        "project": "Habr E2E Tests",
+        "analysisPeriod": "7 days",
+        "generated": "2024-01-15T10:30:45.123Z",
+        "dataPoints": 7
+    },
+    "summary": {
+        "testSuccessRate": {
+            "current": 86.67,
+            "average": 85.42,
+            "min": 80.0,
+            "max": 92.5,
+            "trend": "improving",
+            "weeklyChange": "+1.25%"
+        },
+        "testCount": {
+            "current": 15,
+            "average": 14.3,
+            "min": 10,
+            "max": 18,
+            "trend": "increasing",
+            "weeklyChange": "+2 tests"
+        },
+        "coverage": {
+            "lines": {
+                "current": 89.2,
+                "average": 87.8,
+                "min": 85.0,
+                "max": 89.2,
+                "trend": "improving",
+                "weeklyChange": "+1.7%"
+            },
+            "functions": {
+                "current": 89.8,
+                "average": 88.5,
+                "min": 86.0,
+                "max": 89.8,
+                "trend": "improving",
+                "weeklyChange": "+1.5%"
+            },
+            "branches": {
+                "current": 79.8,
+                "average": 78.2,
+                "min": 75.0,
+                "max": 79.8,
+                "trend": "improving",
+                "weeklyChange": "+1.8%"
+            }
+            },
+            "performance": {
+            "duration": {
+                "current": 120.534,
+                "average": 125.3,
+                "min": 115.2,
+                "max": 135.5,
+                "trend": "improving",
+                "weeklyChange": "-4.8s"
+            }
+        }
+    },
+    "dailyData": [
+        {
+            "date": "2024-01-15",
+            "tests": {
+                "total": 15,
+                "passed": 13,
+                "failed": 1,
+                "skipped": 1,
+                "successRate": 86.67,
+                "duration": 120.534
+            },
+            "coverage": {
+                "lines": 89.2,
+                "functions": 89.8,
+                "branches": 79.8,
+                "overall": 87.05
+            },
+            "issues": [
+                {
+                "type": "test_failure",
+                "severity": "medium",
+                "description": "TimeoutError в тесте открытия статьи",
+                "test": "Habr.com - Тестирование функционала статей.TC-4"
+                }
+            ]
+        },
+        {
+            "date": "2024-01-14",
+            "tests": {
+                "total": 14,
+                "passed": 12,
+                "failed": 1,
+                "skipped": 1,
+                "successRate": 85.71,
+                "duration": 118.2
+            },
+            "coverage": {
+                "lines": 89.0,
+                "functions": 89.5,
+                "branches": 79.5,
+                "overall": 86.67
+            },
+            "issues": []
+        },
+        {
+            "date": "2024-01-13",
+            "tests": {
+                "total": 13,
+                "passed": 12,
+                "failed": 0,
+                "skipped": 1,
+                "successRate": 92.31,
+                "duration": 115.2
+            },
+            "coverage": {
+                "lines": 88.5,
+                "functions": 89.0,
+                "branches": 78.8,
+                "overall": 86.1
+            },
+            "issues": []
+        },
+        {
+            "date": "2024-01-12",
+            "tests": {
+                "total": 15,
+                "passed": 13,
+                "failed": 1,
+                "skipped": 1,
+                "successRate": 86.67,
+                "duration": 122.8
+            },
+            "coverage": {
+                "lines": 88.0,
+                "functions": 88.5,
+                "branches": 78.0,
+                "overall": 85.5
+            },
+            "issues": [
+                {
+                "type": "test_failure",
+                "severity": "low",
+                "description": "Нестабильный тест авторизации",
+                "test": "Habr.com - Тестирование авторизации.TC-4"
+                }
+            ]
+        },
+        {
+        "date": "2024-01-11",
+            "tests": {
+                "total": 14,
+                "passed": 11,
+                "failed": 2,
+                "skipped": 1,
+                "successRate": 78.57,
+                "duration": 128.5
+            },
+            "coverage": {
+                "lines": 87.5,
+                "functions": 88.0,
+                "branches": 77.5,
+                "overall": 85.0
+            },
+            "issues": [
+                {
+                "type": "test_failure",
+                "severity": "high",
+                "description": "Падение нескольких тестов поиска",
+                "test": "Habr.com - Тестирование функционала статей.TC-1, TC-2"
+                }
+            ]
+        },
+        {
+            "date": "2024-01-10",
+            "tests": {
+                "total": 10,
+                "passed": 8,
+                "failed": 1,
+                "skipped": 1,
+                "successRate": 80.0,
+                "duration": 95.2
+            },
+            "coverage": {
+                "lines": 86.0,
+                "functions": 87.0,
+                "branches": 76.0,
+                "overall": 83.67
+            },
+            "issues": [
+                {
+                "type": "infrastructure",
+                "severity": "high",
+                "description": "Проблемы с подключением к Habr.com"
+                }
+            ]
+        },
+        {
+            "date": "2024-01-09",
+            "tests": {
+                "total": 12,
+                "passed": 10,
+                "failed": 1,
+                "skipped": 1,
+                "successRate": 83.33,
+                "duration": 105.7
+            },
+            "coverage": {
+                "lines": 85.0,
+                "functions": 86.0,
+                "branches": 75.0,
+                "overall": 82.33
+            },
+            "issues": [
+                {
+                "type": "coverage",
+                "severity": "medium",
+                "description": "Низкое покрытие новых файлов"
+                }
+            ]
+        }
+    ],
+    "weeklyAggregates": {
+        "week_2024_01_08": {
+            "tests": {
+                "total": 70,
+                "passed": 60,
+                "failed": 8,
+                "skipped": 2,
+                "successRate": 85.71,
+                "avgDuration": 122.3
+            },
+            "coverage": {
+                "lines": 88.2,
+                "functions": 88.8,
+                "branches": 78.5,
+                "overall": 86.17
+            },
+            "stability": 91.4
+        },
+        "week_2024_01_01": {
+            "tests": {
+                "total": 65,
+                "passed": 55,
+                "failed": 8,
+                "skipped": 2,
+                "successRate": 84.62,
+                "avgDuration": 128.5
+            },
+            "coverage": {
+                "lines": 87.5,
+                "functions": 88.0,
+                "branches": 77.8,
+                "overall": 85.43
+            },
+            "stability": 90.8
+        }
+    },
+    "analysis": {
+        "testStability": {
+            "flakyTests": [
+                {
+                "test": "TC-4: Можно открыть первую статью из списка",
+                "failures": 3,
+                "successes": 4,
+                "stabilityRate": 57.1,
+                "recommendation": "Добавить retry логику или увеличить timeout"
+                }
+            ],
+            "mostStableTests": [
+                {
+                "test": "TC-1: Главная страница загружается корректно",
+                "runs": 7,
+                "failures": 0,
+                "stabilityRate": 100.0
+                },
+                {
+                "test": "TC-2: Логотип Habr отображается",
+                "runs": 7,
+                "failures": 0,
+                "stabilityRate": 100.0
+                }
+            ]
+        },
+        "coverageTrend": {
+            "improvingFiles": [
+                {
+                "file": "src/pages/HabrMainPage.ts",
+                "from": 95.0,
+                "to": 100.0,
+                "change": "+5.0%",
+                "period": "7 days"
+                },
+                {
+                "file": "src/pages/BasePage.ts",
+                "from": 92.5,
+                "to": 97.5,
+                "change": "+5.0%",
+                "period": "7 days"
+                }
+            ],
+            "regressingFiles": [
+                {
+                "file": "src/pages/HabrArticlePage.ts",
+                "from": 95.0,
+                "to": 90.0,
+                "change": "-5.0%",
+                "period": "7 days",
+                "reason": "Добавлены новые непокрытые методы"
+                }
+            ]
+        },
+        "performanceAnalysis": {
+            "slowestSuites": [
+                {
+                "suite": "Habr.com - Тестирование функционала статей",
+                "avgDuration": 52.4,
+                "trend": "stable",
+                "recommendation": "Оптимизировать поисковые запросы"
+                },
+                {
+                "suite": "Habr.com - Smoke Tests",
+                "avgDuration": 44.8,
+                "trend": "improving",
+                "improvement": "-0.4s"
+                }
+            ],
+            "improvementAreas": [
+                {
+                "area": "Поиск статей",
+                "current": 15.7,
+                "target": 10.0,
+                "potential": "-36.3%",
+                "action": "Использовать более специфичные селекторы"
+                },
+                {
+                "area": "Навигация по разделам",
+                "current": 8.9,
+                "target": 5.0,
+                "potential": "-43.8%",
+                "action": "Кэшировать элементы навигации"
+                }
+            ]
+        },
+        "predictions": {
+            "nextWeek": {
+                "testSuccessRate": {
+                "predicted": 87.5,
+                "confidence": 85,
+                "range": [85.0, 90.0]
+                },
+                "coverage": {
+                "lines": { "predicted": 90.0, "confidence": 80 },
+                "functions": { "predicted": 90.5, "confidence": 75 },
+                "branches": { "predicted": 81.0, "confidence": 70 }
+                },
+                "performance": {
+                "duration": { "predicted": 118.0, "confidence": 80 }
+                }
+            },
+            "trend": "positive",
+            "confidence": "medium",
+            "risks": [
+                "Возможны нестабильности из-за изменений на сайте Habr",
+                "Низкое покрытие HabrAuthPage.ts может ухудшить общие показатели"
+            ]
+        }
+    },
+    "recommendations": [
+        {
+            "priority": "high",
+            "area": "test_stability",
+            "action": "Исправить flaky тест TC-4",
+            "impact": "Увеличит общую стабильность на ~5%"
+        },
+        {
+            "priority": "high",
+            "area": "coverage",
+            "action": "Улучшить покрытие HabrAuthPage.ts до 80%+",
+            "impact": "Увеличит общее покрытие на ~3%"
+        },
+        {
+            "priority": "medium",
+            "area": "performance",
+            "action": "Оптимизировать тесты поиска статей",
+            "impact": "Сократит время выполнения на ~20%"
+        },
+        {
+            "priority": "low",
+            "area": "monitoring",
+            "action": "Настроить алерты при падении coverage ниже 85%",
+            "impact": "Улучшит контроль качества"
+        }
+    ]
+}

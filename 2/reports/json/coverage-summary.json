@@ -1,0 +1,107 @@
+{
+    "metadata": {
+        "project": "Habr E2E Tests",
+        "timestamp": "2024-01-15T10:30:45.123Z",
+        "generator": "jest",
+        "instrumenter": "babel",
+        "coverageProvider": "v8"
+    },
+    "total": {
+        "lines": {
+            "total": 861,
+            "covered": 768,
+            "skipped": 0,
+            "pct": 89.2
+        },
+        "statements": {
+            "total": 1023,
+            "covered": 915,
+            "skipped": 0,
+            "pct": 89.4
+        },
+        "functions": {
+            "total": 127,
+            "covered": 114,
+            "skipped": 0,
+            "pct": 89.8
+        },
+        "branches": {
+            "total": 198,
+            "covered": 158,
+            "skipped": 0,
+            "pct": 79.8
+        }
+    },
+    "files": {
+        "src/pages/BasePage.ts": {
+            "lines": { "total": 200, "covered": 195, "pct": 97.5 },
+            "statements": { "total": 235, "covered": 230, "pct": 97.9 },
+            "functions": { "total": 12, "covered": 10, "pct": 83.3 },
+            "branches": { "total": 15, "covered": 12, "pct": 80.0 }
+        },
+        "src/pages/HabrMainPage.ts": {
+            "lines": { "total": 299, "covered": 299, "pct": 100.0 },
+            "statements": { "total": 345, "covered": 345, "pct": 100.0 },
+            "functions": { "total": 23, "covered": 18, "pct": 78.3 },
+            "branches": { "total": 8, "covered": 6, "pct": 75.0 }
+        },
+        "src/pages/HabrArticlePage.ts": {
+            "lines": { "total": 162, "covered": 162, "pct": 100.0 },
+            "statements": { "total": 190, "covered": 190, "pct": 100.0 },
+            "functions": { "total": 15, "covered": 10, "pct": 66.7 },
+            "branches": { "total": 4, "covered": 2, "pct": 50.0 }
+        },
+        "src/pages/HabrAuthPage.ts": {
+            "lines": { "total": 150, "covered": 82, "pct": 54.7 },
+            "statements": { "total": 178, "covered": 100, "pct": 56.2 },
+            "functions": { "total": 25, "covered": 14, "pct": 56.0 },
+            "branches": { "total": 35, "covered": 20, "pct": 57.1 }
+        },
+        "src/tests/habr.smoke.test.ts": {
+            "lines": { "total": 50, "covered": 30, "pct": 60.0 },
+            "statements": { "total": 75, "covered": 50, "pct": 66.7 },
+            "functions": { "total": 52, "covered": 52, "pct": 100.0 },
+            "branches": { "total": 136, "covered": 118, "pct": 86.8 }
+        }
+    },
+    "directories": {
+        "src/pages": {
+            "lines": { "total": 811, "covered": 738, "pct": 91.0 },
+            "statements": { "total": 948, "covered": 865, "pct": 91.2 },
+            "functions": { "total": 75, "covered": 52, "pct": 69.3 },
+            "branches": { "total": 62, "covered": 40, "pct": 64.5 }
+        },
+        "src/tests": {
+            "lines": { "total": 50, "covered": 30, "pct": 60.0 },
+            "statements": { "total": 75, "covered": 50, "pct": 66.7 },
+            "functions": { "total": 52, "covered": 52, "pct": 100.0 },
+            "branches": { "total": 136, "covered": 118, "pct": 86.8 }
+        }
+    },
+    "analysis": {
+        "highCoverage": [
+            { "file": "src/pages/HabrMainPage.ts", "lines": 100.0, "category": "excellent" },
+            { "file": "src/pages/HabrArticlePage.ts", "lines": 100.0, "category": "excellent" },
+            { "file": "src/pages/BasePage.ts", "lines": 97.5, "category": "excellent" }
+        ],
+        "lowCoverage": [
+            { "file": "src/pages/HabrAuthPage.ts", "lines": 54.7, "category": "poor", "needsAttention": true },
+            { "file": "src/tests/habr.smoke.test.ts", "lines": 60.0, "category": "needsImprovement" }
+        ],
+        "uncoveredFunctions": [
+            { "file": "src/pages/HabrAuthPage.ts", "functions": ["testInvalidLoginScenarios", "testInvalidRegisterScenarios"] },
+            { "file": "src/pages/BasePage.ts", "functions": ["navigate"] }
+        ],
+        "trend": {
+            "lines": { "current": 89.2, "previous": 87.5, "change": "+1.7", "direction": "up" },
+            "functions": { "current": 89.8, "previous": 88.0, "change": "+1.8", "direction": "up" },
+            "branches": { "current": 79.8, "previous": 78.5, "change": "+1.3", "direction": "up" }
+        }
+    },
+    "qualityGates": {
+        "lines": { "threshold": 80, "actual": 89.2, "passed": true },
+        "functions": { "threshold": 75, "actual": 89.8, "passed": true },
+        "branches": { "threshold": 70, "actual": 79.8, "passed": true },
+        "overall": { "threshold": 80, "actual": 87.05, "passed": true }
+    }
+}

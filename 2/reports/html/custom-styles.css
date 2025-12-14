@@ -1,0 +1,131 @@
+/* Кастомные стили для HTML отчета */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+  margin: -20px -20px 20px -20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  text-align: center;
+  flex: 1;
+}
+
+.summary-item.passed {
+  color: #28a745;
+}
+
+.summary-item.failed {
+  color: #dc3545;
+}
+
+.summary-item.pending {
+  color: #ffc107;
+}
+
+.test-suite {
+  margin-bottom: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.test-suite-header {
+  background: #e9ecef;
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.test-suite-content {
+  padding: 15px;
+}
+
+.test-item {
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.test-item:last-child {
+  border-bottom: none;
+}
+
+.test-item.passed {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+}
+
+.test-item.failed {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+}
+
+.test-duration {
+  float: right;
+  color: #6c757d;
+  font-size: 12px;
+}
+
+.test-error {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+
+.screenshot-link {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.screenshot-link:hover {
+  background: #0056b3;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #6c757d;
+  font-size: 12px;
+}

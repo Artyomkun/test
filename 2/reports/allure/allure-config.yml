@@ -1,0 +1,29 @@
+allure:
+  environment:
+    OS: Windows 11
+    Browser: Chrome 120
+    Node.js: v18.18.0
+    Test_Runner: Jest  # Исправлено: Playwright → Jest
+    Execution_Mode: CI/CD Pipeline  # Оставляем как было
+    
+  categories:
+    - name: Ignored tests
+      matchedStatuses: [skipped]
+      messageRegex: ".*test.*skip.*|.*it\\.skip.*|.*describe\\.skip.*|.*pending.*"
+    
+    - name: Infrastructure problems
+      matchedStatuses: [broken, failed]
+      messageRegex: ".*Connection refused.*|.*Timeout.*|.*Element not found.*|.*network.*error.*|.*ECONNREFUSED.*"
+    
+    - name: Product defects
+      matchedStatuses: [failed]
+      messageRegex: ".*expect.*|.*toEqual.*|.*toBe.*|.*not\\.toBe.*|.*AssertionError.*"
+    
+    - name: Test defects
+      matchedStatuses: [broken]
+      messageRegex: ".*SyntaxError.*|.*TypeError.*|.*ReferenceError.*|.*is not a function.*|.*Cannot read property.*"
+    
+    # Новая категория для настройки
+    - name: Configuration issues
+      matchedStatuses: [failed, broken]
+      messageRegex: ".*ENOENT.*|.*no such file.*|.*Cannot find module.*|.*configuration.*error.*"

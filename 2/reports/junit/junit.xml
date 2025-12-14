@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="27" failures="6" errors="0" time="300.778">
+  <testsuite name="Habr.com - Тестирование функционала статей" errors="0" failures="0" skipped="0" timestamp="2025-12-14T21:44:22" time="95.469" tests="4">
+    <testcase classname="Habr.com - Тестирование функционала статей › TC-1: Работа с поиском" name="Поиск по запросу &quot;TypeScript&quot; возвращает результаты" time="27.748">
+    </testcase>
+    <testcase classname="Habr.com - Тестирование функционала статей › TC-2: Открытие и чтение статей" name="Можно открыть первую статью" time="24.14">
+    </testcase>
+    <testcase classname="Habr.com - Тестирование функционала статей › TC-3: Сортировка и фильтрация" name="Сортировка статей по рейтингу" time="17.861">
+    </testcase>
+    <testcase classname="Habr.com - Тестирование функционала статей › TC-3: Сортировка и фильтрация" name="Фильтрация статей по времени" time="16.174">
+    </testcase>
+  </testsuite>
+  <testsuite name="Habr.com - Детальное тестирование авторизации" errors="0" failures="3" skipped="0" timestamp="2025-12-14T21:44:22" time="150.653" tests="6">
+    <testcase classname="Habr.com - Детальное тестирование авторизации › TC-1: Детальная проверка формы входа" name="Форма входа содержит все необходимые элементы" time="12.328">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: true
+Received: false
+    at Object.&lt;anonymous&gt; (D:\test\2\habr-tests\src\tests\habr.auth.detailed.test.ts:116:35)</failure>
+    </testcase>
+    <testcase classname="Habr.com - Детальное тестирование авторизации › TC-1: Детальная проверка формы входа" name="Вход с неверными данными показывает ошибку" time="11.506">
+      <failure>TimeoutError: Waiting for selector `input[name=&quot;email&quot;][form=&quot;ident-form&quot;]` failed
+    at Function.waitFor (D:\test\2\node_modules\puppeteer-core\src\common\QueryHandler.ts:213:36)
+    at CdpFrame.waitForSelector (D:\test\2\node_modules\puppeteer-core\src\api\Frame.ts:741:13)
+    at CdpPage.waitForSelector (D:\test\2\node_modules\puppeteer-core\src\api\Page.ts:3051:12)
+    at HabrAuthPage.waitForElement (D:\test\2\habr-tests\src\pages\BasePage.ts:64:29)
+    at HabrAuthPage.typeText (D:\test\2\habr-tests\src\pages\BasePage.ts:264:25)
+    at HabrAuthPage.fillLoginForm (D:\test\2\habr-tests\src\pages\HabrAuthPage.ts:143:9)
+    at Object.&lt;anonymous&gt; (D:\test\2\habr-tests\src\tests\habr.auth.detailed.test.ts:149:17)</failure>
+    </testcase>
+    <testcase classname="Habr.com - Детальное тестирование авторизации › TC-2: Валидация формы регистрации" name="Все поля формы регистрации присутствуют" time="26.386">
+    </testcase>
+    <testcase classname="Habr.com - Детальное тестирование авторизации › TC-2: Валидация формы регистрации" name="Чекбокс соглашения обязателен" time="24.903">
+    </testcase>
+    <testcase classname="Habr.com - Детальное тестирование авторизации › TC-4: Восстановление пароля" name="Можно перейти на форму восстановления пароля" time="34.921">
+      <failure>Error: 
+    at D:\test\2\habr-tests\src\tests\habr.auth.detailed.test.ts:324:13
+    at _dispatchDescribe (D:\test\2\node_modules\jest-circus\build\jestAdapterInit.js:604:26)
+    at describe (D:\test\2\node_modules\jest-circus\build\jestAdapterInit.js:572:44)
+    at D:\test\2\habr-tests\src\tests\habr.auth.detailed.test.ts:319:13
+    at _dispatchDescribe (D:\test\2\node_modules\jest-circus\build\jestAdapterInit.js:604:26)
+    at describe (D:\test\2\node_modules\jest-circus\build\jestAdapterInit.js:572:44)
+    at Object.&lt;anonymous&gt; (D:\test\2\habr-tests\src\tests\habr.auth.detailed.test.ts:18:9)
+    at Runtime._execModule (D:\test\2\node_modules\jest-runtime\build\index.js:1268:24)
+    at Runtime._loadModule (D:\test\2\node_modules\jest-runtime\build\index.js:944:12)
+    at Runtime.requireModule (D:\test\2\node_modules\jest-runtime\build\index.js:832:12)
+    at jestAdapter (D:\test\2\node_modules\jest-circus\build\runner.js:95:13)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runTestInternal (D:\test\2\node_modules\jest-runner\build\testWorker.js:275:16)
+    at runTest (D:\test\2\node_modules\jest-runner\build\testWorker.js:343:7)
+    at Object.worker (D:\test\2\node_modules\jest-runner\build\testWorker.js:497:12)</failure>
+    </testcase>
+    <testcase classname="Habr.com - Детальное тестирование авторизации › TC-5: Интеграционные тесты" name="Нельзя зарегистрироваться с уже существующим email" time="28.208">
+    </testcase>
+  </testsuite>
+  <testsuite name="Habr.com - Тестирование авторизации" errors="0" failures="2" skipped="0" timestamp="2025-12-14T21:46:54" time="107.013" tests="4">
+    <testcase classname="Habr.com - Тестирование авторизации › TC-1: Доступность форм авторизации" name="Кнопка входа отображается на главной странице" time="13.796">
+    </testcase>
+    <testcase classname="Habr.com - Тестирование авторизации › TC-1: Доступность форм авторизации" name="Можно перейти на страницу входа" time="14.538">
+      <failure>Error: expect(received).toContain(expected) // indexOf
+
+Expected substring: &quot;account.habr.com&quot;
+Received string:    &quot;https://habr.com/ru/articles/&quot;
+    at Object.&lt;anonymous&gt; (D:\test\2\habr-tests\src\tests\habr.auth.test.ts:77:32)</failure>
+    </testcase>
+    <testcase classname="Habr.com - Тестирование авторизации › TC-1: Доступность форм авторизации" name="Можно перейти на страницу регистрации" time="29.264">
+    </testcase>
+    <testcase classname="Habr.com - Тестирование авторизации › TC-2: Валидация формы авторизации" name="Валидация пустых полей формы входа" time="38.044">
+      <failure>Error: 
+    at D:\test\2\habr-tests\src\tests\habr.auth.test.ts:102:13
+    at _dispatchDescribe (D:\test\2\node_modules\jest-circus\build\jestAdapterInit.js:604:26)
+    at describe (D:\test\2\node_modules\jest-circus\build\jestAdapterInit.js:572:44)
+    at D:\test\2\habr-tests\src\tests\habr.auth.test.ts:101:13
+    at _dispatchDescribe (D:\test\2\node_modules\jest-circus\build\jestAdapterInit.js:604:26)
+    at describe (D:\test\2\node_modules\jest-circus\build\jestAdapterInit.js:572:44)
+    at Object.&lt;anonymous&gt; (D:\test\2\habr-tests\src\tests\habr.auth.test.ts:19:9)
+    at Runtime._execModule (D:\test\2\node_modules\jest-runtime\build\index.js:1268:24)
+    at Runtime._loadModule (D:\test\2\node_modules\jest-runtime\build\index.js:944:12)
+    at Runtime.requireModule (D:\test\2\node_modules\jest-runtime\build\index.js:832:12)
+    at jestAdapter (D:\test\2\node_modules\jest-circus\build\runner.js:95:13)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runTestInternal (D:\test\2\node_modules\jest-runner\build\testWorker.js:275:16)
+    at runTest (D:\test\2\node_modules\jest-runner\build\testWorker.js:343:7)
+    at Object.worker (D:\test\2\node_modules\jest-runner\build\testWorker.js:497:12)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="TypeScript configuration test" errors="0" failures="0" skipped="0" timestamp="2025-12-14T21:48:41" time="6.167" tests="2">
+    <testcase classname="TypeScript configuration test" name="TypeScript should compile correctly" time="0.015">
+    </testcase>
+    <testcase classname="TypeScript configuration test" name="Async/await should work" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="Habr.com - Smoke Tests" errors="0" failures="1" skipped="0" timestamp="2025-12-14T21:45:58" time="203.103" tests="11">
+    <testcase classname="Habr.com - Smoke Tests › TC-1: Проверка загрузки и видимости основных элементов" name="Главная страница загружается корректно" time="8.323">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-1: Проверка загрузки и видимости основных элементов" name="Логотип Habr отображается" time="14.488">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-1: Проверка загрузки и видимости основных элементов" name="Навигационное меню отображается" time="24.209">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-1: Проверка загрузки и видимости основных элементов" name="Кнопка входа отображается" time="13.636">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-2: Проверка контента на главной странице" name="Список статей загружается" time="18.464">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-2: Проверка контента на главной странице" name="Заголовки статей отображаются корректно" time="28.983">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-3: Проверка навигации по разделам" name="Навигация в раздел &quot;admin&quot; работает" time="13.981">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-3: Проверка навигации по разделам" name="Навигация в раздел &quot;design&quot; работает" time="9.983">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-3: Проверка навигации по разделам" name="Навигация в раздел &quot;management&quot; работает" time="7.762">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-3: Проверка навигации по разделам" name="Навигация в раздел &quot;marketing&quot; работает" time="8.316">
+    </testcase>
+    <testcase classname="Habr.com - Smoke Tests › TC-3: Проверка навигации по разделам" name="Поиск статьи по ключевому слову &quot;питон&quot;" time="49.163">
+      <failure>TimeoutError: Waiting for selector `h2.tm-title.tm-title_h2` failed
+    at Function.waitFor (D:\test\2\node_modules\puppeteer-core\src\common\QueryHandler.ts:213:36)
+    at CdpFrame.waitForSelector (D:\test\2\node_modules\puppeteer-core\src\api\Frame.ts:741:13)
+    at CdpPage.waitForSelector (D:\test\2\node_modules\puppeteer-core\src\api\Page.ts:3051:12)
+    at HabrMainPage.searchArticles (D:\test\2\habr-tests\src\pages\HabrMainPage.ts:221:9)
+    at Object.&lt;anonymous&gt; (D:\test\2\habr-tests\src\tests\habr.smoke.test.ts:226:13)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

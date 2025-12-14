@@ -1,0 +1,145 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "generator": "jest-json-reporter",
+        "timestamp": "2024-01-15T10:30:45.123Z",
+        "project": "Habr E2E Tests",
+        "environment": "development"
+    },
+    "summary": {
+        "total": 15,
+        "passed": 13,
+        "failed": 1,
+        "skipped": 1,
+        "pending": 0,
+        "duration": 120.534,
+        "successRate": 86.67,
+        "startTime": "2024-01-15T10:28:45.000Z",
+        "endTime": "2024-01-15T10:30:45.123Z"
+    },
+    "suites": [
+        {
+        "name": "Habr.com - Smoke Tests",
+        "path": "src/tests/habr.smoke.test.ts",
+        "tests": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "duration": 45.234,
+        "status": "passed",
+        "tests": [
+            {
+            "name": "TC-1: Главная страница загружается корректно",
+            "status": "passed",
+            "duration": 12.345,
+            "startTime": "2024-01-15T10:28:46.000Z",
+            "endTime": "2024-01-15T10:28:58.345Z",
+            "annotations": [],
+            "errors": []
+            },
+            {
+            "name": "TC-2: Логотип Habr отображается",
+            "status": "passed",
+            "duration": 8.123,
+            "startTime": "2024-01-15T10:28:58.500Z",
+            "endTime": "2024-01-15T10:29:06.623Z",
+            "annotations": [
+                {
+                "type": "screenshot",
+                "description": "Скриншот логотипа",
+                "path": "screenshots/logo-visible-2024-01-15T10:30:50.png"
+                }
+            ],
+            "errors": []
+            }
+        ]
+        },
+        {
+        "name": "Habr.com - Тестирование функционала статей",
+        "path": "src/tests/habr.articles.test.ts",
+        "tests": 6,
+        "passed": 4,
+        "failed": 1,
+        "skipped": 1,
+        "duration": 50.123,
+        "status": "failed",
+        "tests": [
+            {
+            "name": "TC-1: Поиск по запросу 'TypeScript' возвращает результаты",
+            "status": "passed",
+            "duration": 15.678,
+            "annotations": [
+                {
+                "type": "screenshot",
+                "description": "Результаты поиска",
+                "path": "screenshots/search-typescript-2024-01-15T10:31:45.png"
+                }
+            ]
+            },
+            {
+            "name": "TC-4: Можно открыть первую статью из списка",
+            "status": "failed",
+            "duration": 8.901,
+            "failure": {
+                "message": "TimeoutError: waiting for selector `.tm-articles-list__item` failed: timeout 10000ms exceeded",
+                "stack": "TimeoutError: waiting for selector `.tm-articles-list__item` failed: timeout 10000ms exceeded\n  at new WaitTask (node_modules/puppeteer/src/common/WaitTask.ts:155:28)\n  at DOMWorld.waitForSelector (node_modules/puppeteer/src/common/DOMWorld.ts:508:22)",
+                "type": "TimeoutError"
+            },
+            "annotations": [
+                {
+                "type": "screenshot",
+                "description": "Ошибка таймаута",
+                "path": "screenshots/article-timeout-2024-01-15T10:32:15.png"
+                }
+            ]
+            }
+        ]
+        }
+    ],
+    "environment": {
+        "nodeVersion": "18.15.0",
+        "npmVersion": "9.5.0",
+        "os": {
+        "platform": "win32",
+        "release": "10.0.22621",
+        "type": "Windows_NT",
+        "arch": "x64"
+        },
+        "browser": {
+        "name": "chrome",
+        "version": "120.0.0.0",
+        "headless": false
+        },
+        "ci": false,
+        "timestamp": "2024-01-15T10:30:45.123Z"
+    },
+    "performance": {
+        "totalDuration": 120.534,
+        "averageTestDuration": 8.035,
+        "slowestTest": {
+        "name": "TC-1: Поиск по запросу 'TypeScript' возвращает результаты",
+        "duration": 15.678
+        },
+        "fastestTest": {
+        "name": "TC-2: Логотип Habr отображается",
+        "duration": 8.123
+        }
+    },
+    "qualityGates": {
+        "testSuccessRate": {
+        "threshold": 80,
+        "actual": 86.67,
+        "passed": true
+        },
+        "coverage": {
+        "threshold": 70,
+        "actual": 89.5,
+        "passed": true
+        },
+        "performance": {
+        "threshold": 180,
+        "actual": 120.534,
+        "passed": true
+        }
+    }
+}
